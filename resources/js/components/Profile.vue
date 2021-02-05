@@ -24,7 +24,7 @@
      id: {{user.id}}<br>
      </h1><br>
      <button @click="$router.push('update')" class="btn btn-primary"><b>Update Password</b></button><br><br>
-     <button @click="$router.push('reset')" class="btn btn-danger"><b>Reset Password</b></button>
+    <!-- <button @click="$router.push('reset')" class="btn btn-danger"><b>Reset Password</b></button>-->
          
 </center>
 </div>

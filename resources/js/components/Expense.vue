@@ -13,7 +13,7 @@
       </ul>
 
       <div class="topnav-right">
-           <button class="btn btn-danger" @click.prevent="logout">Logout</button>
+           <router-link to='/dashboard' tag="button" class="btn btn-info"><b>Go Back</b></router-link>
       </div>
     </div>
   </nav>
@@ -130,11 +130,11 @@ export default {
         })
 
       },
-        logout(){
+       /* logout(){
             axios.post('/api/logout').then(() =>{
                 this.$router.push({ name: "Home" })
             })
-        }
+        }*/
     },
       mounted(){
         axios.get('/api/user').then((response) => {

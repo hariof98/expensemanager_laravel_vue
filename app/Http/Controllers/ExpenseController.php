@@ -62,7 +62,7 @@ class ExpenseController extends Controller
     }
     public function delete(Request $request,$id)
     {
-         $expenses= Expense::where('user_id', '=', $request->user()->id)->delete();
+         $expenses= Expense::where('id','=',$request->id)->delete();
          return $expenses;
         
          //echo "Data deleted";
@@ -74,6 +74,12 @@ class ExpenseController extends Controller
    public function addexpense(Request $request)
    {
        return Expense::where('user_id', '=', $request->user()->id)->sum('expense_amount');
+   }
+
+   public function edit(Request $request)
+   {
+       $edit = Expense::where('id', '=')->get();
+       return $edit;
    }
 
 }

@@ -10,7 +10,7 @@ import Expense from './components/Expense';
 import Income from './components/Income';
 import Daybook from './components/Daybook';
 import Incomerecord from './components/Incomerecord';
-import Charts from './components/Charts';
+import Editexpense from './components/Editexpense';
 import axios from 'axios';
 
 
@@ -21,7 +21,8 @@ export default{
         {path: '/', component: Home, name: 'Home'},
         {path: '/register', component: Register},
         {path: '/login', component: Login, name: 'Login'},
-        {path: '/charts', component: Charts, name: 'Charts'},
+        {path: '/editexpense', component: Editexpense, name: 'Editexpense'},
+        {path: '/reset', component: Reset, name: 'Reset'},
         {path: '/update', component: Update, name: 'Update', beforeEnter: (to, form, next)=> {
             axios.get('/api/authenticated').then(() => {
                next()
@@ -31,14 +32,7 @@ export default{
         }
     },
 
-    {path: '/reset', component: Reset, name: 'Reset', beforeEnter: (to, form, next)=> {
-        axios.get('/api/authenticated').then(() => {
-           next()
-        }).catch(() => {
-            return next({ name: 'Login'})
-        })
-    }
-},
+  
 
         {path: '/expense', component: Expense, name: 'Expense', beforeEnter: (to, form, next)=> {
             axios.get('/api/authenticated').then(() => {

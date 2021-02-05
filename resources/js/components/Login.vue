@@ -30,6 +30,10 @@
       
         <hr>
       <button @click.prevent="loginUser" type="submit" class="login-btn">Login</button></center>
+     <center>Forgot Password?
+        <br>
+        <router-link to="/reset">Reset</router-link>
+      </center>
       
     </div>
 </form>

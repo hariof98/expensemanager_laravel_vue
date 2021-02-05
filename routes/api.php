@@ -26,6 +26,7 @@ Route::middleware('auth:sanctum')->get('/authenticated', function () {
 });
 
 Route::get('delete/{id}', 'ExpenseController@delete');
+Route::get('edit/{id}', 'ExpenseController@edit');
 
 Route::get('register', 'RegisterController@register');
 Route::get('login', 'LoginController@login');
@@ -50,3 +51,4 @@ Route::post('addincome', 'IncomeController@addincome');
 Route::post('sumsavings', 'IncomeController@sumsavings');
 Route::post('daybook', 'ExpenseController@daybook');
 Route::post('incomerecord', 'IncomeController@incomerecord');
+Route::post('edit/{id}', 'IncomeController@edit');

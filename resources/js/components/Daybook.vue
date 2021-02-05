@@ -22,7 +22,7 @@
               <th>Payment Status</th>
               <th>Date and Time</th>
               <th>Action</th>
-              <th>Operation</th>
+            
             </tr>
     
          <tr v-for="expense in expenses" :key="expense.id">
@@ -34,8 +34,8 @@
           <td>{{expense.mode_of_payment}}</td>
           <td>{{expense.status}}</td>
           <td>{{expense.date}} <br>{{expense.time}}  </td>
-          <td><b-button variant="danger" @click="deleteExpense">Delete</b-button></td>
-          <td><b-button variant="primary">Edit</b-button></td>
+          <td><b-button variant="danger" @click="deleteExpense(expense)">Delete</b-button></td>
+         
          
            </tr>
        
@@ -74,6 +74,13 @@ export default {
        
         console.log("deleted");
       });
+    },
+
+    editExpense()
+    {    
+         axios.get('api/edit/{id}').then(() => {
+         this.$router.push({ name: "Editexpense" });
+         })
     },
 
       loadUsers(){
