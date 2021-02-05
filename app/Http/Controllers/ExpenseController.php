@@ -62,7 +62,7 @@ class ExpenseController extends Controller
     }
     public function delete(Request $request,$id)
     {
-         $expenses= Expense::where('id','=',$request->id)->delete();
+         $expenses= Expense::where('user_id','=',$request->user()->id)->delete();
          return $expenses;
         
          //echo "Data deleted";
